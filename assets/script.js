@@ -26,13 +26,11 @@ leftArrow.addEventListener ("click", () => {
 	console.log ("j'ai cliqué a gauche")
 	selected --
 	if (selected<0) {
-		selected=3
+		selected=slides.length-1
 	}
 	document.querySelector (".dot_selected").classList.remove ("dot_selected")
 	document.querySelector (".d"+selected).classList.add ("dot_selected")
-	document.querySelector (".dot_selected").classList.remove ("dot_selected")
-	document.querySelector (".d"+selected).classList.add ("dot_selected")
-	document.querySelector (".banner-img").src= ("./assets/images/slideshow/"+slides[selected].image)
+	document.querySelector (".banner-img").src= "./assets/images/slideshow/"+slides[selected].image
 	text.innerHTML = slides[selected].tagLine
 })
 
@@ -40,12 +38,12 @@ const rightArrow = document.querySelector (".arrow_right")
 rightArrow.addEventListener ("click", () => {
 	console.log ("j'ai cliqué a droite")
 	selected ++
-	if (selected>3) {
+	if (selected>slides.length-1) {
 		selected=0
 	}
 	document.querySelector (".dot_selected").classList.remove ("dot_selected")
 	document.querySelector (".d"+selected).classList.add ("dot_selected")
-	document.querySelector (".banner-img").src= ("./assets/images/slideshow/"+slides[selected].image)
+	document.querySelector (".banner-img").src= "./assets/images/slideshow/"+slides[selected].image
 	text.innerHTML = slides[selected].tagLine
 })
 
